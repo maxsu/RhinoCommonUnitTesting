@@ -18,7 +18,7 @@ namespace RhinoPlugin.Tests.GHAutoLoad
 
         public XunitExampleTestsRI(XunitTestFixtureRI fixture)
         {
-           fixture = _fixture;
+           _fixture = fixture;
         }
        
         [Fact]
