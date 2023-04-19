@@ -4,13 +4,13 @@ using System.IO;
 using System.Reflection;
 using Xunit;
 
-namespace RhinoPlugin.Tests.Xunit
+namespace RhinoPlugin.Tests
 {
 
     /// <summary>
     /// Shared test context across unit tests that loads rhinocommon.dll and grasshopper.dll
     /// </summary>
-    public class XunitTestFixture : IDisposable
+    public class TestFixture : IDisposable
     {
         private bool initialized = false;
         private static string rhinoDir;
@@ -19,7 +19,7 @@ namespace RhinoPlugin.Tests.Xunit
         /// <summary>
         /// Empty Constuctor
         /// </summary>
-        public XunitTestFixture()
+        public TestFixture()
         {
             //get the correct rhino 7 installation directory
             rhinoDir = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\McNeel\Rhinoceros\7.0\Install", "Path", null) as string ?? string.Empty;
@@ -90,8 +90,9 @@ namespace RhinoPlugin.Tests.Xunit
     /// <summary>
     /// Collection Fixture - shared context across test classes
     /// </summary>
+    /// Todo: Explain or Tidy
     [CollectionDefinition("RhinoTestingCollection")]
-    public class RhinoCollection : ICollectionFixture<XunitTestFixture>
+    public class RhinoCollection : ICollectionFixture<TestFixture>
     {
         // This class has no code, and is never created. Its purpose is simply
         // to be the place to apply [CollectionDefinition] and all the

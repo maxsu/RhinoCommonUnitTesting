@@ -11,8 +11,7 @@ Visual Studio 2019
 https://www.visualstudio.com/downloads/
 
 ## Test Framework
-This project provides examples for XUnit and MS Test,
-but the principles would be easily transferable to other frameworks if needs.
+This project uses XUnit.
 
 ## How to Run
 - Build the solution
